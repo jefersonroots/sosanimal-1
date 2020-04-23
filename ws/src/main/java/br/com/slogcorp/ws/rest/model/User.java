@@ -17,11 +17,11 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@Getter
 @Table(schema = "MYDB", name = "USER")
 public class User {
 
     @Id
-    @Getter
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_USER")
     private Integer cdUser;
@@ -30,11 +30,9 @@ public class User {
     private String login;
 
     @Setter
-    @Getter
     @Column(name = "PASSWORD")
     private String password;
 
-    @Getter
     @Column(name = "FIRST_NAME")
     private String firstName;
 
@@ -44,7 +42,7 @@ public class User {
 
     @Email
     @Column(name = "MAIL")
-    private String mail;
+    private String email;
 
     @Column(name = "DOCUMENT")
     private Long document;
@@ -52,7 +50,6 @@ public class User {
     @Column(name = "PHONE")
     private Long phone;
 
-    @Getter
     @Setter
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "CD_ADRESS", referencedColumnName = "ID_ADRESS")
