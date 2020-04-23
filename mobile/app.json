@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "HelloWorld",
-    "slug": "mobile",
+    "name": "SOS animal",
+    "slug": "sosanimal",
     "platforms": [
       "ios",
       "android",
