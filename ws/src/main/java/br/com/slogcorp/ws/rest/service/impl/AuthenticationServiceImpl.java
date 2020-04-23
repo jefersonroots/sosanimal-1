@@ -20,7 +20,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
     @Override
     public UserDTO authenticate(String login, String password) {
-        Optional<User> result = userService.findForLoginAndPassword(login, password);
+        Optional<User> result = userService.findByEmailAndPassword(login, password);
         UserDTO userDTO = new UserDTO();
 
         result.orElseThrow(() -> new AuthenticationException("Login ou senha incorreto!"));
