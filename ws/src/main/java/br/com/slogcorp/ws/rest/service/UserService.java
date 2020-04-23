@@ -7,5 +7,5 @@ import java.util.Optional;
 public interface UserService {
     void create(User user);
 
-    Optional<User> findForLoginAndPassword(String login, String password);
+    Optional<User> findByEmailAndPassword(String login, String password);
 }
