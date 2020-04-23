@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
+@Getter
 @Table(schema = "MYDB", name = "ADRESS")
 public class Adress {
 
@@ -18,15 +19,14 @@ public class Adress {
     @Column(name = "ID_ADRESS")
     private Integer cdAdress;
 
-    @Getter
+
     @Column(name = "CEP")
     private Integer cep;
 
-    @Getter
+
     @Column(name = "STREET")
     private String street;
 
-    @Getter
     @Column(name = "NUMBER")
     private Integer number;
 
