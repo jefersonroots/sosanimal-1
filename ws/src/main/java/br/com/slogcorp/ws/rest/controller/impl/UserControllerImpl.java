@@ -24,10 +24,4 @@ public class UserControllerImpl implements UserController {
         userService.create(user);
     }
 
-    @PostMapping("/teste")
-    public String teste() {
-        return String.valueOf("Bateu aqui");
-    }
-
-
 }
