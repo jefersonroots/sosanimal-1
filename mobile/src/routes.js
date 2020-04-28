@@ -10,8 +10,8 @@ export default function Routes(){
     return(
         <NavigationContainer>
 
-        <AppStack.Navigator screenOptions={{}}>
-            <AppStack.Screen name="SOS ANIMAL " component={Auth}/>
+        <AppStack.Navigator screenOptions={{headerShown: false}}>
+            <AppStack.Screen name="Auth" component={Auth}/>
             <AppStack.Screen name="Register" component={Register}/>
         </AppStack.Navigator>
 

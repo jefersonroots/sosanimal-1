@@ -1,53 +1,55 @@
-import React ,{Component} from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native';
-import {Alert,
-  Text, 
-  View, 
+import {
+  Text,
+  View,
   Image,
   TextInput,
-  TouchableOpacity} from 'react-native'
+  TouchableOpacity
+} from 'react-native'
 import styles from './styles';
+
+
 export default function Auth() {
 
   const navigation = useNavigation();
 
-  function navigateToRegister(){
+  function navigateToRegister() {
     navigation.navigate('Register');
   }
 
-  return(
-    <View style={styles.container}>  
-      <View style={styles.LogoView}>  
-      <Image 
-        source={require('../../../assets/icon.png')}
-        style={styles.logo} 
-        
+  return (
+    <View style={styles.container}>
+      <View style={styles.LogoView}>
+        <Image
+          source={require('../../../assets/icon.png')}
+          style={styles.logo}
+        />
+      </View>
+      <TextInput style={styles.input}
+        placeholder="Digite seu email"
+        autoCorrect={false}
       />
-       </View>
-          <TextInput  style={styles.input} 
-          placeholder = "Digite seu email"
-          autoCorrect={false}
-          />
-          <TextInput  style={styles.input} 
-            secureTextEntry={true}
-            autoCorrect={false}
-            placeholder = "Digite sua senha"
-          />
+      <TextInput style={styles.input}
+        secureTextEntry={true}
+        autoCorrect={false}
+        placeholder="Digite sua senha"
+      />
       <TouchableOpacity
         style={styles.botao}
-        onPress = {() => {}}
-        >
+        onPress={() => { }}
+      >
         <Text style={styles.botaoText}> Login </Text>
       </TouchableOpacity>
 
       <TouchableOpacity
-      style={styles.botao} 
-      onPress = {() => navigateToRegister()}>
-      <Text style={styles.botaoText}> Registrar </Text>
+        style={styles.botao}
+        onPress={() => navigateToRegister()}>
+        <Text style={styles.botaoText}> Registrar </Text>
       </TouchableOpacity>
 
-  </View>
-);
+    </View>
+  );
 
 }
 
