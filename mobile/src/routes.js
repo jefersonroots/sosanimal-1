@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import Auth from './pages/Auth';
 import Register from './pages/Register';
+import RegisterOng from './pages/RegisterOng';
 
 const AppStack = createStackNavigator();
 export default function Routes(){
@@ -13,6 +14,7 @@ export default function Routes(){
         <AppStack.Navigator screenOptions={{headerShown: false}}>
             <AppStack.Screen name="Auth" component={Auth}/>
             <AppStack.Screen name="Register" component={Register}/>
+            <AppStack.Screen name="RegisterOng" component={RegisterOng}/>
         </AppStack.Navigator>
 
         </NavigationContainer>
