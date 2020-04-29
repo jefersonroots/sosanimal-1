@@ -2,17 +2,21 @@ import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { Form } from '@unform/mobile';
 import styles from "./styles";
-import { Feather } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function Register() {
+    const navigation = useNavigation();
 
+    function navigateToRegister() {
+      navigation.navigate('RegisterOng');
+    }
 
     return (
 
         <View style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Text style={styles.title}>Cadastro</Text>
+                <Text style={styles.title}>Cadastrar Usuário</Text>
 
                 <View>
                     <Form>
@@ -92,7 +96,7 @@ export default function Register() {
 
                             <TouchableOpacity
                                 style={styles.botao}
-                                onPress={() => { }}
+                                onPress={() => {navigateToRegister()}}
                             >
                                 <Text style={styles.botaoText}>Cadastrar</Text>
                             </TouchableOpacity>
