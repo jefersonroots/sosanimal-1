@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { Form } from '@unform/mobile';
+import { Scope } from '@unform/core';
 import styles from "./styles";
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,7 +10,7 @@ export default function Register() {
     const navigation = useNavigation();
 
     function navigateToRegister() {
-      navigation.navigate('RegisterOng');
+        navigation.navigate('RegisterOng');
     }
 
     return (
@@ -38,10 +39,12 @@ export default function Register() {
                             autoCorrect={false}
                         />
                         <TextInput style={styles.input}
+                            keyboardType="number-pad"
                             placeholder="Telefone"
                             autoCorrect={false}
                         />
                         <TextInput style={styles.input}
+                            keyboardType="number-pad"
                             placeholder="CPF"
                             autoCorrect={false}
                         />
@@ -50,8 +53,9 @@ export default function Register() {
                             <Text style={styles.subtitle}>Endereço</Text>
 
                             <View style={styles.formEndereco}>
-                                <Form>
+                                <Scope>
                                     <TextInput style={styles.inputCep}
+                                        keyboardType="number-pad"
                                         placeholder="CEP"
                                         autoCorrect={false}
                                     />
@@ -61,7 +65,7 @@ export default function Register() {
                                     >
                                         <Text style={styles.botaoText}>Verificar</Text>
                                     </TouchableOpacity>
-                                </Form>
+                                </Scope>
                             </View>
 
                             <View style={styles.formEndereco}>
@@ -89,6 +93,7 @@ export default function Register() {
                                     autoCorrect={false}
                                 />
                                 <TextInput style={styles.inputNumero}
+                                    keyboardType="number-pad"
                                     placeholder="Número"
                                     autoCorrect={false}
                                 />
@@ -96,7 +101,7 @@ export default function Register() {
 
                             <TouchableOpacity
                                 style={styles.botao}
-                                onPress={() => {navigateToRegister()}}
+                                onPress={() => { navigateToRegister() }}
                             >
                                 <Text style={styles.botaoText}>Cadastrar</Text>
                             </TouchableOpacity>

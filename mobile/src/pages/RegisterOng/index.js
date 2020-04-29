@@ -28,17 +28,17 @@ export default function Register() {
                             autoCorrect={false}
                         />
                         <TextInput style={styles.input}
-                            placeholder="CNPJ"
-                            autoCorrect={false}
-                            keyboardType="number-pad"
-                        />
-                        <TextInput style={styles.input}
                             placeholder="Telefone 1"
                             autoCorrect={false}
                             keyboardType="number-pad"
                         />
                         <TextInput style={styles.input}
                             placeholder="Telefone 2"
+                            autoCorrect={false}
+                            keyboardType="number-pad"
+                        />
+                        <TextInput style={styles.input}
+                            placeholder="CNPJ"
                             autoCorrect={false}
                             keyboardType="number-pad"
                         />
