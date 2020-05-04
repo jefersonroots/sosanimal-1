@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView } from 'react-native';
-import { Form } from '@unform/mobile';
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
 import { Scope } from '@unform/core';
 import styles from "./styles";
 import { useNavigation } from '@react-navigation/native';
-
+import Input from '../../components/Form/Input';
+import { Form } from '@unform/mobile';
 
 export default function Register() {
     const navigation = useNavigation();
@@ -21,29 +21,28 @@ export default function Register() {
 
                 <View>
                     <Form>
-                        <TextInput style={styles.input}
+                        <Input style={styles.input}
                             placeholder="Nome"
-                            autoCorrect={false}
-                        />
-                        <TextInput style={styles.input}
+                            autoCorrect={false} />
+                        <Input style={styles.input}
                             placeholder="Sobrenome"
                             autoCorrect={false}
                         />
-                        <TextInput style={styles.input}
+                        <Input style={styles.input}
                             placeholder="Email"
                             autoCorrect={false}
                         />
-                        <TextInput style={styles.input}
+                        <Input style={styles.input}
                             secureTextEntry={true}
                             placeholder="Senha"
                             autoCorrect={false}
                         />
-                        <TextInput style={styles.input}
+                        <Input style={styles.input}
                             keyboardType="number-pad"
                             placeholder="Telefone"
                             autoCorrect={false}
                         />
-                        <TextInput style={styles.input}
+                        <Input style={styles.input}
                             keyboardType="number-pad"
                             placeholder="CPF"
                             autoCorrect={false}
@@ -52,9 +51,10 @@ export default function Register() {
                         <View>
                             <Text style={styles.subtitle}>Endereço</Text>
 
-                            <View style={styles.formEndereco}>
-                                <Scope>
-                                    <TextInput style={styles.inputCep}
+                            <Scope>
+                                <View style={styles.formEndereco}>
+
+                                    <Input style={styles.inputCep}
                                         keyboardType="number-pad"
                                         placeholder="CEP"
                                         autoCorrect={false}
@@ -65,39 +65,40 @@ export default function Register() {
                                     >
                                         <Text style={styles.botaoText}>Verificar</Text>
                                     </TouchableOpacity>
-                                </Scope>
-                            </View>
 
-                            <View style={styles.formEndereco}>
-                                <TextInput style={styles.inputCidade}
+                                </View>
+
+                                <View style={styles.formEndereco}>
+                                    <Input style={styles.inputCidade}
+                                        editable={false}
+                                        placeholder="Cidade"
+                                        autoCorrect={false}
+                                    />
+                                    <Input style={styles.inputUf}
+                                        editable={false}
+                                        placeholder="UF"
+                                        autoCorrect={false}
+                                    />
+                                </View>
+
+                                <Input style={styles.inputBairro}
                                     editable={false}
-                                    placeholder="Cidade"
+                                    placeholder="Bairro"
                                     autoCorrect={false}
                                 />
-                                <TextInput style={styles.inputUf}
-                                    editable={false}
-                                    placeholder="UF"
-                                    autoCorrect={false}
-                                />
-                            </View>
 
-                            <TextInput style={styles.inputBairro}
-                                editable={false}
-                                placeholder="Bairro"
-                                autoCorrect={false}
-                            />
-
-                            <View style={styles.formEndereco}>
-                                <TextInput style={styles.inputComplemento}
-                                    placeholder="Complemento"
-                                    autoCorrect={false}
-                                />
-                                <TextInput style={styles.inputNumero}
-                                    keyboardType="number-pad"
-                                    placeholder="Número"
-                                    autoCorrect={false}
-                                />
-                            </View>
+                                <View style={styles.formEndereco}>
+                                    <Input style={styles.inputComplemento}
+                                        placeholder="Complemento"
+                                        autoCorrect={false}
+                                    />
+                                    <Input style={styles.inputNumero}
+                                        keyboardType="number-pad"
+                                        placeholder="Número"
+                                        autoCorrect={false}
+                                    />
+                                </View>
+                            </Scope>
 
                             <TouchableOpacity
                                 style={styles.botao}

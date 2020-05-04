@@ -61,6 +61,7 @@ export default StyleSheet.create({
     borderRadius: 3,
     width: 247,
   },
+
   inputBairro: {
     marginTop: 7,
     padding: 10,
@@ -69,6 +70,7 @@ export default StyleSheet.create({
     borderRadius: 3,
     width: 300,
   },
+  
   inputCep: {
     marginTop: 7,
     padding: 10,

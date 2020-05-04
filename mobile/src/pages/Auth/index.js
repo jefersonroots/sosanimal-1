@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   Text,
   View,
   Image,
-  TextInput,
-  TouchableOpacity
-} from 'react-native'
+  TouchableOpacity,
+} from 'react-native';
+import Input from '../../components/Form/Input';
 import styles from './styles';
+import { Form } from '@unform/mobile';
+
+
 
 
 export default function Auth() {
+  const formAuth = useRef(null);
 
   const navigation = useNavigation();
 
   function navigateToRegister() {
     navigation.navigate('Register');
+  }
+  function handleSubmit(data) {
+    console.log(data);
+    // { email: 'test@example.com', password: '123456' }
   }
 
   return (
@@ -26,21 +34,15 @@ export default function Auth() {
           style={styles.logo}
         />
       </View>
-      <TextInput style={styles.input}
-        placeholder="Digite seu email"
-        autoCorrect={false}
-      />
-      <TextInput style={styles.input}
-        secureTextEntry={true}
-        autoCorrect={false}
-        placeholder="Digite sua senha"
-      />
-      <TouchableOpacity
-        style={styles.botao}
-        onPress={() => { }}
-      >
-        <Text style={styles.botaoText}> Login </Text>
-      </TouchableOpacity>
+
+      <Form ref={formAuth} onSubmit={handleSubmit}>
+        <Input placeholder="E-mail" name="email" type="email" style={styles.input}/>
+        <Input placeholder="Senha" name="password" type="password" style={styles.input} secureTextEntry={true} password={true}/>
+
+        <TouchableOpacity style={styles.botao} onPress={() => {formAuth.current.submitForm()}}>
+          <Text style={styles.botaoText}> Login </Text>
+        </TouchableOpacity>
+      </Form>
 
       <TouchableOpacity
         style={styles.botao}
